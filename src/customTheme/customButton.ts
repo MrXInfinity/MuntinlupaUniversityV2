@@ -21,6 +21,9 @@ const Button = defineStyleConfig({
     link: {
       _hover: {
         color: "yellow.400"
+      },
+      _active: {
+        color: "yellow.400"
       }
     },
     outline: {

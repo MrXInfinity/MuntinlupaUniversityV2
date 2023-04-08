@@ -2,8 +2,10 @@ import { Box, Button, Container, Flex, Spacer, Text } from "@chakra-ui/react";
 import { Outlet } from "react-router";
 import iconImg from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [selectedTab, setSelectedTab] = useState("home");
   return (
     <Container
       maxW="full"
@@ -37,13 +39,25 @@ const Navigation = () => {
           alignItems="center"
           gap={6}
         >
-          <Button variant="link">
+          <Button
+            variant="link"
+            isActive={selectedTab === "home"}
+            onClick={() => setSelectedTab("home")}
+          >
             <NavLink to="/">Home</NavLink>
           </Button>
-          <Button variant="link">
+          <Button
+            variant="link"
+            isActive={selectedTab === "courses"}
+            onClick={() => setSelectedTab("courses")}
+          >
             <NavLink to="/courses">Courses</NavLink>
           </Button>
-          <Button variant="link">
+          <Button
+            variant="link"
+            isActive={selectedTab === "about-us"}
+            onClick={() => setSelectedTab("about-us")}
+          >
             <NavLink to="/courses">About Us</NavLink>
           </Button>
           <Button>
